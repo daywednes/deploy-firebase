@@ -14,11 +14,11 @@ if [ -z "${TARGET_BRANCH}" ]; then
     TARGET_BRANCH="master"
 fi
 
-if [ "${GITHUB_REF}" != "refs/heads/${TARGET_BRANCH}" ]; then
-    echo "Current branch: ${GITHUB_REF}"
-    echo "Aborting deployment"
-    exit 1
-fi
+# if [ "${GITHUB_REF}" != "refs/heads/${TARGET_BRANCH}" ]; then
+#     echo "Current branch: ${GITHUB_REF}"
+#     echo "Aborting deployment"
+#     exit 1
+# fi
 
 if [ -z "${TARGET_DIR}" ]; then
     TARGET_DIR="."
