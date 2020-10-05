@@ -20,6 +20,12 @@ if [ "${GITHUB_REF}" != "refs/heads/${TARGET_BRANCH}" ]; then
     exit 1
 fi
 
+if [ -z "${TARGET_DIR}" ]; then
+    TARGET_DIR="."
+fi
+
+cd $TARGET_DIR
+
 firebase deploy \
     -m "${GITHUB_SHA}" \
     --project ${FIREBASE_PROJECT} \
