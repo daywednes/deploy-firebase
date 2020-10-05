@@ -24,9 +24,7 @@ if [ -z "${TARGET_DIR}" ]; then
     TARGET_DIR="."
 fi
 
-cd $TARGET_DIR
-
-firebase deploy \
+cd $TARGET_DIR && npm install && npm build && firebase deploy \
     -m "${GITHUB_SHA}" \
     --project ${FIREBASE_PROJECT} \
     --only hosting
